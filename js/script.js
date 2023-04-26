@@ -1,20 +1,9 @@
-printMessage('Zagrałem kamieńx! Jeśli Twój ruch to papier, to wygrywasz!');
-let computerMove = `nieznany ruch`;
-let playerMove=3;
+
+
 let randomFraction = Math.random();
 let calculation = randomFraction * 3 + 1;
 let roundNumber = Math.floor(calculation);//math.floor zaokrągla wylosowaną liczbę w dół
 //let randomNumber = Math.floor(Math.random() * 3 + 1); //losowanie przypadkowej liczby
-
-printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
-printMessage('Zagrałem ' + playerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
-printMessage('Wylosowany ułamek to: ' + randomFraction);
-printMessage('Ułamek pomnożony przez 3 i powiększony o 1: ' + calculation);
-printMessage('Liczba po zaokrągleniu w dół to: ' + roundNumber);
-//printMessage(randomNumber);
-
-
-
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 if (playerInput == 1) {
 	printMessage('kamień')
@@ -38,6 +27,12 @@ if (playerInput == 1) {
 // };
 //console.log('Wylosowana liczba to: ' + randomNumber);
 
+//let computerMove = getMoveName(2,3);
+
+//function getMoveName (){
+//	return (papier,nożyce);
+//}
+
 if(roundNumber == 1){
 	computerMove = 'kamień';
   } else if (roundNumber == 2){
@@ -46,33 +41,69 @@ if(roundNumber == 1){
 	computerMove ='nożyce'
   }
 
-  if( computerMove == 'kamień' && playerMove == 'papier'){
-	printMessage('Ty wygrywasz!');
-  }else if (computerMove == 'kamień' && playerMove == 'nożyce'){
-	printMessage('Komputer wygrywa!');
-  }
-  else if (computerMove == 'kamień' && playerMove == 'kamień'){
-	printMessage('remis');
-  }
-  else if (computerMove == 'papier' && playerMove == 'nożyce'){
-	printMessage('Ty wygrywasz!');
-  }
-  else if (computerMove == 'papier' && playerMove == 'kamień'){
-	printMessage('Komputer wygrywa!');
-  }
-  else if (computerMove == 'papier' && playerMove == 'papier'){
-	printMessage('remis');
-  }
+ 
+  
+  
+	function displayResult(computerMove, playerMove){
+		printMessage('Zagrałem ' + computerMove + ', a Ty ' + playerMove);
+	  
+		if( computerMove == 'kamień' && playerMove == 'papier'){
+			printMessage('Ty wygrywasz!');
+		  }else if (computerMove == 'kamień' && playerMove == 'nożyce'){
+			printMessage('Komputer wygrywa!');
+		  }
+		  else if (computerMove == 'kamień' && playerMove == 'kamień'){
+			printMessage('remis');
+		  }
+		  else if (computerMove == 'papier' && playerMove == 'nożyce'){
+			printMessage('Ty wygrywasz!');
+		  }
+		  else if (computerMove == 'papier' && playerMove == 'kamień'){
+			printMessage('Komputer wygrywa!');
+		  }
+		  else if (computerMove == 'papier' && playerMove == 'papier'){
+			printMessage('remis');
+		  }
+		
+		  else if (computerMove == 'nożyce' && playerMove == 'nożyce'){
+			printMessage('remis');
+		  }
+		  else if (computerMove == 'nożyce' && playerMove == 'papier'){
+			printMessage('Komputer wygrywa!');
+		  }
+		  else if (computerMove == 'nożyce' && playerMove == 'kamień'){
+			printMessage('Ty wygrywasz!');
+		  }  
+		}
+		displayResult(computerMove, playerMove);
 
-  else if (computerMove == 'nożyce' && playerMove == 'nożyce'){
-	printMessage('remis');
-  }
-  else if (computerMove == 'nożyce' && playerMove == 'papier'){
-	printMessage('Komputer wygrywa!');
-  }
-  else if (computerMove == 'nożyce' && playerMove == 'kamień'){
-	printMessage('Ty wygrywasz!');
-  }
+//   if( computerMove == 'kamień' && playerMove == 'papier'){
+// 	printMessage('Ty wygrywasz!');
+//   }else if (computerMove == 'kamień' && playerMove == 'nożyce'){
+// 	printMessage('Komputer wygrywa!');
+//   }
+//   else if (computerMove == 'kamień' && playerMove == 'kamień'){
+// 	printMessage('remis');
+//   }
+//   else if (computerMove == 'papier' && playerMove == 'nożyce'){
+// 	printMessage('Ty wygrywasz!');
+//   }
+//   else if (computerMove == 'papier' && playerMove == 'kamień'){
+// 	printMessage('Komputer wygrywa!');
+//   }
+//   else if (computerMove == 'papier' && playerMove == 'papier'){
+// 	printMessage('remis');
+//   }
+
+//   else if (computerMove == 'nożyce' && playerMove == 'nożyce'){
+// 	printMessage('remis');
+//   }
+//   else if (computerMove == 'nożyce' && playerMove == 'papier'){
+// 	printMessage('Komputer wygrywa!');
+//   }
+//   else if (computerMove == 'nożyce' && playerMove == 'kamień'){
+// 	printMessage('Ty wygrywasz!');
+//   }
   
 
 
@@ -84,3 +115,61 @@ if(playerInput == '1'){
   }
   
   printMessage('Twój ruch to: ' + playerInput);
+
+  let change1 = calculateChange(13, 20);
+printMessage('Do zapłaty 13zł, zapłacono 20zł, reszta: ' + change1);
+
+let change2 = calculateChange(77, 100);
+printMessage('Do zapłaty 77zł, zapłacono 100zł, reszta: ' + change2);
+
+function calculateChange(argPrice, argPaidAmount) {
+	console.log('wywołano calculateChange')
+	console.log('argumenty: ' + argPrice + ', ' + argPaidAmount);
+	return (argPaidAmount - argPrice);
+  }
+
+  function buttonClicked(){
+	printMessage('Guzik został kliknięty');
+  }
+  
+  let Kamien = document.getElementById('play-rock');
+  let papier = document.getElementById('play-paper');
+  let nożyce = document.getElementById('play-scissors');
+
+  Kamien.addEventListener('click', buttonClicked);
+  papier.addEventListener('click', buttonClicked);
+  nożyce.addEventListener('click', buttonClicked);
+
+document.getElementById('play-rock').addEventListener('click', function(){
+	printMessage('Guzik został kliknięty');
+	displayResult(computerMove, "kamień")
+  });
+
+document.getElementById('play-paper').addEventListener('click', function(){
+	printMessage('Guzik został kliknięty');
+	displayResult(computerMove, "papier")
+  });
+
+  document.getElementById('play-scissors').addEventListener('click', function(){
+	printMessage('Guzik został kliknięty');
+	displayResult(computerMove, "nożyce")
+  });
+ 
+ 
+ 
+  
+
+
+
+// let firstNumber = 1;
+// let secondNumber = 2;
+// let thirdNumber = 3;
+
+  function sumThreeNumbers(firstNumber, secondNumber, thirdNumber){
+	const sum = firstNumber + secondNumber + thirdNumber;
+	return sum;
+  }
+
+  const sum=sumThreeNumbers(1,2,3);
+  console.log(sum);
+  printMessage(sum);
