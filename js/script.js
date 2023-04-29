@@ -1,4 +1,4 @@
-
+{
 
 let randomFraction = Math.random();
 let calculation = randomFraction * 3 + 1;
@@ -47,34 +47,27 @@ if(roundNumber == 1){
 	function displayResult(computerMove, playerMove){
 		printMessage('Zagrałem ' + computerMove + ', a Ty ' + playerMove);
 	  
-		if( computerMove == 'kamień' && playerMove == 'papier'){
+		if (computerMove == 'kamień' && playerMove == 'papier') {
 			printMessage('Ty wygrywasz!');
-		  }else if (computerMove == 'kamień' && playerMove == 'nożyce'){
+		} else if (computerMove == 'kamień' && playerMove == 'nożyce') {
 			printMessage('Komputer wygrywa!');
-		  }
-		  else if (computerMove == 'kamień' && playerMove == 'kamień'){
+		} else if (computerMove == 'kamień' && playerMove == 'kamień') {
 			printMessage('remis');
-		  }
-		  else if (computerMove == 'papier' && playerMove == 'nożyce'){
+		} else if (computerMove == 'papier' && playerMove == 'nożyce') {
 			printMessage('Ty wygrywasz!');
-		  }
-		  else if (computerMove == 'papier' && playerMove == 'kamień'){
+		} else if (computerMove == 'papier' && playerMove == 'kamień') {
 			printMessage('Komputer wygrywa!');
-		  }
-		  else if (computerMove == 'papier' && playerMove == 'papier'){
+		} else if (computerMove == 'papier' && playerMove == 'papier') {
 			printMessage('remis');
-		  }
-		
-		  else if (computerMove == 'nożyce' && playerMove == 'nożyce'){
+		} else if (computerMove == 'nożyce' && playerMove == 'nożyce') {
 			printMessage('remis');
-		  }
-		  else if (computerMove == 'nożyce' && playerMove == 'papier'){
+		} else if (computerMove == 'nożyce' && playerMove == 'papier') {
 			printMessage('Komputer wygrywa!');
-		  }
-		  else if (computerMove == 'nożyce' && playerMove == 'kamień'){
+		}else if (computerMove == 'nożyce' && playerMove == 'kamień') {
 			printMessage('Ty wygrywasz!');
-		  }  
+		}  
 		}
+
 		displayResult(computerMove, playerMove);
 
 //   if( computerMove == 'kamień' && playerMove == 'papier'){
@@ -110,66 +103,54 @@ if(roundNumber == 1){
 printMessage('Mój ruch to: ' + computerMove);
 console.log('Gracz wpisał: ' + playerInput);
 
-if(playerInput == '1'){
+if (playerInput == '1') {
 	playerMove = 'kamień';
-  }
-  
-  printMessage('Twój ruch to: ' + playerInput);
-
-  let change1 = calculateChange(13, 20);
+}  
+printMessage('Twój ruch to: ' + playerInput);
+let change1 = calculateChange(13, 20);
 printMessage('Do zapłaty 13zł, zapłacono 20zł, reszta: ' + change1);
-
 let change2 = calculateChange(77, 100);
 printMessage('Do zapłaty 77zł, zapłacono 100zł, reszta: ' + change2);
-
 function calculateChange(argPrice, argPaidAmount) {
 	console.log('wywołano calculateChange')
 	console.log('argumenty: ' + argPrice + ', ' + argPaidAmount);
 	return (argPaidAmount - argPrice);
-  }
+}
 
-  function buttonClicked(){
-	printMessage('Guzik został kliknięty');
-  }
+function buttonClicked() {
+printMessage('Guzik został kliknięty');
+}
   
-  let Kamien = document.getElementById('play-rock');
-  let papier = document.getElementById('play-paper');
-  let nożyce = document.getElementById('play-scissors');
+let kamien = document.getElementById('play-rock');
+let papier = document.getElementById('play-paper');
+let nożyce = document.getElementById('play-scissors');
 
-  Kamien.addEventListener('click', buttonClicked);
-  papier.addEventListener('click', buttonClicked);
-  nożyce.addEventListener('click', buttonClicked);
+kamien.addEventListener('click', buttonClicked);
+papier.addEventListener('click', buttonClicked);
+nożyce.addEventListener('click', buttonClicked);
 
 document.getElementById('play-rock').addEventListener('click', function(){
 	printMessage('Guzik został kliknięty');
 	displayResult(computerMove, "kamień")
-  });
+});
 
 document.getElementById('play-paper').addEventListener('click', function(){
 	printMessage('Guzik został kliknięty');
 	displayResult(computerMove, "papier")
-  });
+});
 
-  document.getElementById('play-scissors').addEventListener('click', function(){
+document.getElementById('play-scissors').addEventListener('click', function(){
 	printMessage('Guzik został kliknięty');
 	displayResult(computerMove, "nożyce")
-  });
- 
- 
- 
-  
+});
+}
 
 
-
-// let firstNumber = 1;
-// let secondNumber = 2;
-// let thirdNumber = 3;
-
-  function sumThreeNumbers(firstNumber, secondNumber, thirdNumber){
+function sumThreeNumbers(firstNumber, secondNumber, thirdNumber) {
 	const sum = firstNumber + secondNumber + thirdNumber;
 	return sum;
   }
 
-  const sum=sumThreeNumbers(1,2,3);
-  console.log(sum);
-  printMessage(sum);
+const sum=sumThreeNumbers(4,5,5);
+console.log(sum);
+printMessage(sum);
