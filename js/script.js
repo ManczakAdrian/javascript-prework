@@ -1,4 +1,4 @@
-{
+ {
 
 let randomFraction = Math.random();
 let calculation = randomFraction * 3 + 1;
@@ -107,6 +107,8 @@ if (playerInput == '1') {
 	playerMove = 'kamień';
 }  
 printMessage('Twój ruch to: ' + playerInput);
+
+
 let change1 = calculateChange(13, 20);
 printMessage('Do zapłaty 13zł, zapłacono 20zł, reszta: ' + change1);
 let change2 = calculateChange(77, 100);
@@ -121,9 +123,9 @@ function buttonClicked() {
 printMessage('Guzik został kliknięty');
 }
   
-let kamien = document.getElementById('play-rock');
-let papier = document.getElementById('play-paper');
-let nożyce = document.getElementById('play-scissors');
+const kamien = document.getElementById('play-rock');
+const papier = document.getElementById('play-paper');
+const nożyce = document.getElementById('play-scissors');
 
 kamien.addEventListener('click', buttonClicked);
 papier.addEventListener('click', buttonClicked);
@@ -154,3 +156,36 @@ function sumThreeNumbers(firstNumber, secondNumber, thirdNumber) {
 const sum=sumThreeNumbers(4,5,5);
 console.log(sum);
 printMessage(sum);
+
+
+function differenceBetweenNumbers(argNumA, argNumB){
+	if(argNumA > argNumB){
+	  var numAIsBigger = true;
+	}
+  
+	if(numAIsBigger){
+	  return argNumA - argNumB;
+	} else {
+	  return argNumB - argNumA;
+	}
+  }
+  const sum2 = differenceBetweenNumbers (5,4);
+  printMessage(sum2);
+
+
+  function differenceBetweenNumbers2(argNumA, argNumB){
+	let numAIsBigger;
+  
+	if(argNumA > argNumB){
+	  numAIsBigger = true;
+	}
+  
+	if(numAIsBigger){
+	  return argNumA - argNumB;
+	} else {
+	  return argNumB - argNumA;
+	}
+  }
+
+  let sum3 = differenceBetweenNumbers2 (6,9);
+  printMessage(sum3 + 'to jest suma sum3');
